@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Bakman Axel Umar | ICT Student</title>
+
+<meta name="description"
+    content="Portfolio of Bakman Axel Umar — ICT student focused on software development, information systems, business analytics and technology.">
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:wght@500;600;700;800&display=swap');
+
+    :root {
+        --bg: #07130e;
+        --bg-soft: #0b1d15;
+        --card: rgba(16, 42, 30, 0.72);
+
+        --green: #53d68c;
+        --green-soft: #8ce6b0;
+        --green-dark: #1f6b46;
+
+        --text: #edf8f1;
+        --text-soft: #a9c0b2;
+        --text-muted: #718b7b;
+
+        --border: rgba(116, 214, 153, 0.16);
+
+        --radius: 22px;
+        --max-width: 1180px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        background:
+            radial-gradient(circle at 10% 10%, rgba(56, 150, 91, 0.12), transparent 28%),
+            radial-gradient(circle at 90% 30%, rgba(40, 120, 74, 0.10), transparent 30%),
+            var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    /* =========================
+       CURSOR RIPPLE SYSTEM
+    ========================= */
+
+    #cursor-ripples {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 9999;
+    }
+
+    .cursor-ripple {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        border: 1px solid rgba(83, 214, 140, 0.45);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: ripple 900ms ease-out forwards;
+    }
+
+    @keyframes ripple {
+        0% {
+            width: 8px;
+            height: 8px;
+            opacity: 0.65;
+        }
+
+        100% {
+            width: 58px;
+            height: 58px;
+            opacity: 0;
+        }
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+
+        backdrop-filter: blur(16px);
+        background: rgba(7, 19, 14, 0.78);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+        width: min(92%, var(--max-width));
+        margin: auto;
+
+        height: 72px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-family: "Urbanist", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--green-soft);
+        text-decoration: none;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: var(--text-soft);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--green);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    header {
+        min-height: 100vh;
+        width: min(92%, var(--max-width));
+        margin: auto;
+
+        display: flex;
+        align-items: center;
+
+        padding: 120px 0 80px;
+    }
+
+    .hero {
+        max-width: 850px;
+    }
+
+    .hero-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+
+        padding: 8px 14px;
+
+        border: 1px solid var(--border);
+        border-radius: 50px;
+
+        color: var(--green-soft);
+        background: rgba(43, 105, 69, 0.14);
+
+        font-size: 0.82rem;
+        font-weight: 600;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-label::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        background: var(--green);
+        border-radius: 50%;
+        box-shadow: 0 0 12px rgba(83, 214, 140, 0.7);
+    }
+
+    h1 {
+        font-family: "Urbanist", sans-serif;
+        font-size: clamp(3.3rem, 8vw, 6.5rem);
+        line-height: 0.95;
+        letter-spacing: -3px;
+        margin-bottom: 28px;
+    }
+
+    .hero-name {
+        color: var(--green);
+    }
+
+    .lily-pad {
+        display: inline-block;
+        width: 0.78em;
+        height: 0.78em;
+        margin-left: 0.16em;
+        vertical-align: 0.08em;
+        border-radius: 50%;
+        background: conic-gradient(from 35deg, transparent 0 42deg, #6ee7a0 43deg 360deg);
+        box-shadow: inset -0.12em -0.12em 0 rgba(16, 95, 55, 0.35), 0 0 0.16em rgba(83, 214, 140, 0.28);
+        animation: lilyFloat 3s ease-in-out infinite;
+        transform-origin: center;
+    }
+
+    @keyframes lilyFloat {
+        0%, 100% { transform: translateY(0) rotate(-4deg); }
+        50% { transform: translateY(-0.13em) rotate(4deg); }
+    }
+
+    .hero p {
+        max-width: 720px;
+        color: var(--text-soft);
+        font-size: 1.08rem;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 14px;
+        margin-top: 34px;
+        flex-wrap: wrap;
+    }
+
+    .button {
+        padding: 12px 19px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        transition:
+            transform 0.25s ease,
+            background 0.25s ease;
+    }
+
+    .button-primary {
+        background: var(--green);
+        color: #06120b;
+    }
+
+    .button-secondary {
+        border: 1px solid var(--border);
+        color: var(--text-soft);
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .button:hover {
+        transform: translateY(-2px);
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    main {
+        width: min(92%, var(--max-width));
+        margin: auto;
+    }
+
+    section {
+        padding: 95px 0;
+        scroll-margin-top: 70px;
+    }
+
+    .section-heading {
+        margin-bottom: 42px;
+    }
+
+    .section-number {
+        display: block;
+        color: var(--green);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        font-family: "Urbanist", sans-serif;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        line-height: 1;
+        margin-bottom: 13px;
+    }
+
+    .section-description {
+        max-width: 650px;
+        color: var(--text-muted);
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 24px;
+    }
+
+    .about-card,
+    .info-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+
+        backdrop-filter: blur(12px);
+    }
+
+    .about-card p {
+        color: var(--text-soft);
+        margin-bottom: 17px;
+    }
+
+    .about-card p:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-card h3 {
+        font-family: "Urbanist", sans-serif;
+        margin-bottom: 18px;
+    }
+
+    .info-list {
+        list-style: none;
+    }
+
+    .info-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border);
+        color: var(--text-soft);
+    }
+
+    .info-list li:last-child {
+        border-bottom: none;
+    }
+
+    .info-list strong {
+        color: var(--text);
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .skill-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 27px;
+
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(83, 214, 140, 0.35);
+    }
+
+    .skill-icon {
+        font-size: 1.5rem;
+        margin-bottom: 13px;
+    }
+
+    .skill-card h3 {
+        font-family: "Urbanist", sans-serif;
+        font-size: 1.15rem;
+        margin-bottom: 17px;
+    }
+
+    .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .skill-tag {
+        padding: 6px 10px;
+        border-radius: 8px;
+
+        background: rgba(83, 214, 140, 0.07);
+        border: 1px solid rgba(83, 214, 140, 0.12);
+
+        color: var(--text-soft);
+        font-size: 0.78rem;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+        display: grid;
+        gap: 18px;
+    }
+
+    .project {
+        display: grid;
+        grid-template-columns: 75px 1fr;
+        gap: 25px;
+
+        padding: 30px;
+
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+
+        background: var(--card);
+
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease;
+    }
+
+    .project:hover {
+        transform: translateY(-4px);
+        border-color: rgba(83, 214, 140, 0.35);
+    }
+
+    .project-icon {
+        width: 58px;
+        height: 58px;
+
+        display: grid;
+        place-items: center;
+
+        border-radius: 16px;
+
+        background: rgba(83, 214, 140, 0.09);
+        border: 1px solid rgba(83, 214, 140, 0.13);
+
+        font-size: 1.55rem;
+    }
+
+    .project h3 {
+        font-family: "Urbanist", sans-serif;
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .project p {
+        color: var(--text-soft);
+        font-size: 0.92rem;
+    }
+
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 15px;
+    }
+
+    .project-tech span {
+        font-size: 0.72rem;
+        color: var(--green-soft);
+        padding: 5px 9px;
+        border-radius: 7px;
+        background: rgba(83, 214, 140, 0.06);
+    }
+
+    /* =========================
+       EDUCATION
+    ========================= */
+
+    .timeline {
+        position: relative;
+        display: grid;
+        gap: 18px;
+    }
+
+    .education-card {
+        padding: 28px 30px;
+        border-left: 2px solid var(--green-dark);
+
+        background: var(--card);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        border-top: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .education-year {
+        display: inline-block;
+        color: var(--green);
+        font-size: 0.78rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .education-card h3 {
+        font-family: "Urbanist", sans-serif;
+        font-size: 1.35rem;
+        margin-bottom: 6px;
+    }
+
+    .education-card strong {
+        color: var(--text);
+    }
+
+    .education-card p {
+        color: var(--text-soft);
+        font-size: 0.9rem;
+    }
+
+    /* =========================
+       ACHIEVEMENTS
+    ========================= */
+
+    .achievement-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .achievement {
+        padding: 23px;
+
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+    }
+
+    .achievement-icon {
+        margin-bottom: 12px;
+    }
+
+    .achievement h3 {
+        font-family: "Urbanist", sans-serif;
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .achievement-year {
+        color: var(--green);
+        font-size: 0.75rem;
+        font-weight: 700;
+    }
+
+    /* =========================
+       ADDITIONAL
+    ========================= */
+
+    .additional-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .additional-card {
+        padding: 30px;
+
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+    }
+
+    .additional-card h3 {
+        font-family: "Urbanist", sans-serif;
+        margin-bottom: 18px;
+    }
+
+    .language-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+    }
+
+    .language {
+        padding: 8px 12px;
+        border-radius: 9px;
+        background: rgba(83, 214, 140, 0.07);
+        border: 1px solid var(--border);
+        color: var(--text-soft);
+        font-size: 0.82rem;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-box {
+        display: grid;
+        grid-template-columns: 1fr 0.8fr;
+        gap: 25px;
+    }
+
+    .contact-main {
+        padding: 35px;
+
+        border-radius: var(--radius);
+        background:
+            linear-gradient(
+                135deg,
+                rgba(55, 137, 88, 0.16),
+                rgba(15, 40, 27, 0.75)
+            );
+
+        border: 1px solid var(--border);
+    }
+
+    .contact-main h3 {
+        font-family: "Urbanist", sans-serif;
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+    }
+
+    .contact-main > p {
+        color: var(--text-soft);
+        margin-bottom: 25px;
+    }
+
+    .contact-items {
+        display: grid;
+        gap: 10px;
+    }
+
+    .contact-item {
+        padding: 13px 15px;
+        border-radius: 11px;
+
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid var(--border);
+
+        color: var(--text-soft);
+        cursor: pointer;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .contact-item:hover {
+        background: rgba(83, 214, 140, 0.07);
+        transform: translateX(3px);
+    }
+
+    .contact-note {
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        margin-top: 12px;
+    }
+
+    .contact-visual {
+        min-height: 280px;
+
+        border-radius: var(--radius);
+
+        border: 1px solid var(--border);
+
+        position: relative;
+        overflow: hidden;
+
+        background:
+            radial-gradient(
+                ellipse at center,
+                rgba(66, 170, 103, 0.18),
+                transparent 55%
+            ),
+            linear-gradient(
+                160deg,
+                #0d2a1b,
+                #06130d
+            );
+    }
+
+    /* Subtle water surface */
+
+    .water-ring {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+
+        width: 120px;
+        height: 55px;
+
+        border: 1px solid rgba(83, 214, 140, 0.22);
+        border-radius: 50%;
+
+        transform: translate(-50%, -50%);
+
+        animation: waterPulse 4s ease-in-out infinite;
+    }
+
+    .water-ring:nth-child(2) {
+        width: 210px;
+        height: 95px;
+        animation-delay: 1s;
+    }
+
+    .water-ring:nth-child(3) {
+        width: 310px;
+        height: 140px;
+        animation-delay: 2s;
+    }
+
+    @keyframes waterPulse {
+        0%,
+        100% {
+            opacity: 0.2;
+            transform: translate(-50%, -50%) scale(0.94);
+        }
+
+        50% {
+            opacity: 0.5;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        width: min(92%, var(--max-width));
+        margin: auto;
+
+        padding: 35px 0 45px;
+
+        border-top: 1px solid var(--border);
+
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        color: var(--text-muted);
+        font-size: 0.78rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+        .nav-links {
+            display: none;
+        }
+
+        .about-grid,
+        .contact-box {
+            grid-template-columns: 1fr;
+        }
+
+        .achievement-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 650px) {
+
+        header {
+            min-height: auto;
+            padding-top: 150px;
+            padding-bottom: 80px;
+        }
+
+        h1 {
+            letter-spacing: -2px;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .skills-grid,
+        .additional-grid,
+        .achievement-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .project {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .project-icon {
+            width: 48px;
+            height: 48px;
+        }
+
+        footer {
+            flex-direction: column;
+        }
+    }
+
+    /* Accessibility */
+
+    @media (prefers-reduced-motion: reduce) {
+
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- Cursor ripple layer -->
+<div id="cursor-ripples"></div>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            AXEL.
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header id="home">
+
+    <div class="hero">
+
+        <span class="hero-label">
+            ICT Student · Software · Information Systems
+        </span>
+
+        <h1>
+            Bakman
+            <span class="hero-name">Axel Umar.<span class="lily-pad" aria-label="lily pad"></span></span>
+        </h1>
+
+        <p>
+            A resilient and empathetic ICT student who enjoys building
+            software, understanding information systems and exploring
+            how technology can solve real-world problems. I thrive in
+            collaborative environments and enjoy taking initiative
+            when learning new technologies.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#projects" class="button button-primary">
+                View my work
+            </a>
+
+            <a href="#contact" class="button button-secondary">
+                Get in touch
+            </a>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <div class="section-heading">
+
+            <span class="section-number">01 / ABOUT</span>
+
+            <h2>Building with purpose.</h2>
+
+            <p class="section-description">
+                My background combines software development,
+                information systems, business analysis and data.
+            </p>
+
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <p>
+                    I'm currently pursuing a Bachelor of Information
+                    and Communication Technology at the Singapore
+                    University of Social Sciences.
+                </p>
+
+                <p>
+                    My interests span software development, web
+                    technologies, databases, business analytics and
+                    information systems. I enjoy understanding both
+                    the technical and business sides of a problem.
+                </p>
+
+                <p>
+                    My previous studies in Business Information Systems
+                    at Republic Polytechnic gave me experience across
+                    programming, business process design, analytics,
+                    project planning and information systems.
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>What I bring</h3>
+
+                <ul class="info-list">
+                    <li>
+                        <strong>Development</strong><br>
+                        Building practical software solutions
+                    </li>
+
+                    <li>
+                        <strong>Systems</strong><br>
+                        Understanding how technology supports organisations
+                    </li>
+
+                    <li>
+                        <strong>Analytics</strong><br>
+                        Working with data to identify useful insights
+                    </li>
+
+                    <li>
+                        <strong>Mindset</strong><br>
+                        Resilience, curiosity and continuous learning
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <div class="section-heading">
+
+            <span class="section-number">02 / SKILLS</span>
+
+            <h2>Things I work with.</h2>
+
+            <p class="section-description">
+                A combination of technical, analytical and
+                business-oriented skills developed through education,
+                projects and self-directed learning.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <!-- Programming -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">⌘</div>
+
+                <h3>Programming & Development</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">ASP.NET</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">jQuery</span>
+                    <span class="skill-tag">LINQ</span>
+                    <span class="skill-tag">Java OOP</span>
+                    <span class="skill-tag">Software Development</span>
+                    <span class="skill-tag">JUnit</span>
+                    <span class="skill-tag">Python Unit Testing</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Web -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">⌁</div>
+
+                <h3>Web & Application Technologies</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Front-End Development</span>
+                    <span class="skill-tag">HTTP</span>
+                    <span class="skill-tag">ASP.NET</span>
+                    <span class="skill-tag">Java UI</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">jQuery</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">HTML</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Data -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">▦</div>
+
+                <h3>Data & Databases</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">NoSQL</span>
+                    <span class="skill-tag">SQLAlchemy</span>
+                    <span class="skill-tag">ORM</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Data Programming</span>
+                    <span class="skill-tag">Business Intelligence</span>
+                    <span class="skill-tag">Business Analytics</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Analytics -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">◫</div>
+
+                <h3>Business & Analytics</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Business Analysis</span>
+                    <span class="skill-tag">Business Analysis Practice</span>
+                    <span class="skill-tag">Business Systems</span>
+                    <span class="skill-tag">Information Systems</span>
+                    <span class="skill-tag">MIS</span>
+                    <span class="skill-tag">Marketing</span>
+                    <span class="skill-tag">Financial Accounting</span>
+                    <span class="skill-tag">Business Process Design</span>
+                    <span class="skill-tag">Project Planning</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Software practices -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">◇</div>
+
+                <h3>Software Practices</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">SDLC</span>
+                    <span class="skill-tag">Software Development Methodologies</span>
+                    <span class="skill-tag">Software Development</span>
+                    <span class="skill-tag">Project Management</span>
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Critical Thinking</span>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Design</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Tools -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">⚙</div>
+
+                <h3>Tools & Platforms</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Operating Systems</span>
+                    <span class="skill-tag">Microsoft Power BI</span>
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Bizagi</span>
+                    <span class="skill-tag">MS Project</span>
+                    <span class="skill-tag">Internet Safety</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Unity -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">◉</div>
+
+                <h3>Additional Technical Skills</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Unity</span>
+                    <span class="skill-tag">Game Development</span>
+                    <span class="skill-tag">Unity Object Interactions</span>
+                    <span class="skill-tag">Collision Physics</span>
+                    <span class="skill-tag">Java OOP</span>
+                    <span class="skill-tag">Self-directed Learning</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Languages -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">◎</div>
+
+                <h3>Languages & Personal Skills</h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">English</span>
+                    <span class="skill-tag">Malay</span>
+                    <span class="skill-tag">Conversational Swedish</span>
+                    <span class="skill-tag">Conversational Finnish</span>
+                    <span class="skill-tag">Conversational German</span>
+                    <span class="skill-tag">Self-learnt Violin</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+        <div class="section-heading">
+
+            <span class="section-number">03 / PROJECTS</span>
+
+            <h2>Selected work.</h2>
+
+            <p class="section-description">
+                Projects that reflect my development across software,
+                systems, data and practical problem solving.
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+            <!-- Hospital -->
+
+            <article class="project">
+
+                <div class="project-icon">
+                    🏥
+                </div>
+
+                <div>
+
+                    <h3>
+                        Hospital Infection Simulation
+                    </h3>
+
+                    <p>
+                        A final-year project exploring how patient
+                        interactions and environmental conditions can
+                        influence infection spread within a hospital
+                        environment. I worked with Unity and object
+                        interactions to model the simulation and
+                        explored self-directed programming to support
+                        different scenarios.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Unity</span>
+                        <span>Game Development</span>
+                        <span>C++</span>
+                        <span>Object Interaction</span>
+                        <span>Simulation</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Smart Study Planner -->
+
+            <article class="project">
+
+                <div class="project-icon">
+                    🌿
+                </div>
+
+                <div>
+
+                    <h3>
+                        Smart Study Planner & Productivity Tracker
+                    </h3>
+
+                    <p>
+                        A student-focused web application designed to
+                        organise modules, assignments and study sessions.
+                        The project will include deadline tracking,
+                        priority management, productivity statistics and
+                        study recommendations based on upcoming work.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>MongoDB</span>
+                        <span>JavaScript</span>
+                        <span>Chart.js</span>
+                        <span>REST API</span>
+                        <span>Unit Testing</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Data -->
+
+            <article class="project">
+
+                <div class="project-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <h3>
+                        World Electricity Generation Analysis
+                    </h3>
+
+                    <p>
+                        Exploratory data analysis involving global
+                        electricity generation, carbon intensity,
+                        electricity demand and fossil-fuel dependence.
+                        The work combines data preparation, statistical
+                        analysis, visualisation and SQL-based analysis
+                        to investigate energy and decarbonisation trends.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                        <span>Plotly</span>
+                        <span>SQL</span>
+                        <span>SQLite</span>
+                        <span>Statistics</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section id="education">
+
+        <div class="section-heading">
+
+            <span class="section-number">04 / EDUCATION</span>
+
+            <h2>Where I learned.</h2>
+
+            <p class="section-description">
+                My academic background combines information technology,
+                business systems and software development.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <article class="education-card">
+
+                <span class="education-year">
+                    2025 — PRESENT
+                </span>
+
+                <h3>
+                    Singapore University of Social Sciences
+                </h3>
+
+                <p>
+                    <strong>
+                        Bachelor of Information and Communication Technology (ICT)
+                    </strong>
+                </p>
+
+                <p>
+                    Currently pursuing undergraduate studies with a
+                    focus on software engineering, system architecture,
+                    information technology and modern web technologies.
+                </p>
+
+            </article>
+
+
+            <article class="education-card">
+
+                <span class="education-year">
+                    2020 — 2023
+                </span>
+
+                <h3>
+                    Republic Polytechnic
+                </h3>
+
+                <p>
+                    <strong>
+                        Diploma in Business Information Systems (DBIS)
+                    </strong>
+                </p>
+
+                <p>
+                    Studied business analytics, software development,
+                    information systems, SQL, Python, business process
+                    modelling, project planning and management tools.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACHIEVEMENTS
+    ========================= -->
+
+    <section id="achievements">
+
+        <div class="section-heading">
+
+            <span class="section-number">05 / ACHIEVEMENTS</span>
+
+            <h2>Milestones.</h2>
+
+            <p class="section-description">
+                Academic and character-based achievements accumulated
+                throughout my education.
+            </p>
+
+        </div>
+
+
+        <div class="achievement-grid">
+
+            <article class="achievement">
+                <div class="achievement-icon">🏆</div>
+                <h3>Edusave Merit Bursary</h3>
+                <span class="achievement-year">2021</span>
+            </article>
+
+            <article class="achievement">
+                <div class="achievement-icon">🏆</div>
+                <h3>Edusave Character Award</h3>
+                <span class="achievement-year">2019</span>
+            </article>
+
+            <article class="achievement">
+                <div class="achievement-icon">🏆</div>
+                <h3>
+                    Edusave Award For Achievement,
+                    Good Leadership and Service (EAGLES)
+                </h3>
+                <span class="achievement-year">2019</span>
+            </article>
+
+            <article class="achievement">
+                <div class="achievement-icon">🏆</div>
+                <h3>Edusave Scholarship</h3>
+                <span class="achievement-year">2019</span>
+            </article>
+
+            <article class="achievement">
+                <div class="achievement-icon">🏆</div>
+                <h3>Education Merit Award</h3>
+                <span class="achievement-year">2018</span>
+            </article>
+
+            <article class="achievement">
+                <div class="achievement-icon">🏆</div>
+                <h3>Education Merit Award</h3>
+                <span class="achievement-year">2017</span>
+            </article>
+
+            <article class="achievement">
+                <div class="achievement-icon">🏆</div>
+                <h3>Edusave Good Progress Award</h3>
+                <span class="achievement-year">2014</span>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BEYOND TECH
+    ========================= -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <span class="section-number">06 / BEYOND TECH</span>
+
+            <h2>Outside the code.</h2>
+
+            <p class="section-description">
+                Skills and interests developed outside traditional
+                technical coursework.
+            </p>
+
+        </div>
+
+
+        <div class="additional-grid">
+
+            <div class="additional-card">
+
+                <h3>Languages</h3>
+
+                <div class="language-list">
+
+                    <span class="language">English</span>
+                    <span class="language">Malay</span>
+                    <span class="language">
+                        Swedish · Conversational
+                    </span>
+                    <span class="language">
+                        Finnish · Conversational
+                    </span>
+                    <span class="language">
+                        German · Conversational
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="additional-card">
+
+                <h3>Self-directed Learning</h3>
+
+                <div class="language-list">
+
+                    <span class="language">Violin</span>
+                    <span class="language">Unity</span>
+                    <span class="language">Game Development</span>
+                    <span class="language">Programming</span>
+                    <span class="language">Web Development</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+        <div class="section-heading">
+
+            <span class="section-number">07 / CONTACT</span>
+
+            <h2>Let's connect.</h2>
+
+            <p class="section-description">
+                Interested in technology, software development,
+                information systems or simply exchanging ideas?
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <div class="contact-main">
+
+                <h3>Get in touch</h3>
+
+                <p>
+                    I'm always open to connecting with people,
+                    discussing technology and exploring opportunities
+                    to learn and build.
+                </p>
+
+                <div class="contact-items">
+
+                    <div
+                        class="contact-item"
+                        onclick="copyToClipboard('bakman.axl@gmail.com', this)"
+                    >
+                        📧 &nbsp; bakman.axl@gmail.com
+                    </div>
+
+                    <div
+                        class="contact-item"
+                        onclick="copyToClipboard('+65 86727721', this)"
+                    >
+                        📱 &nbsp; +65 86727721
+                    </div>
+
+                    <div
+                        class="contact-item"
+                        onclick="copyToClipboard('linkedin.com/in/axel-bakman', this)"
+                    >
+                        💼 &nbsp; linkedin.com/in/axel-bakman
+                    </div>
+
+                </div>
+
+                <p class="contact-note">
+                    Click a contact detail to copy it to your clipboard.
+                </p>
+
+            </div>
+
+
+            <div class="contact-visual">
+
+                <div class="water-ring"></div>
+                <div class="water-ring"></div>
+                <div class="water-ring"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <span>
+        © 2026 Bakman Axel Umar
+    </span>
+
+    <span>
+        Built with HTML · CSS · JavaScript
+    </span>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* =========================
+       CURSOR RIPPLES
+    ========================= */
+
+    const rippleContainer =
+        document.getElementById("cursor-ripples");
+
+    let lastRippleTime = 0;
+
+    document.addEventListener("mousemove", (event) => {
+
+        const now = Date.now();
+
+        // Limits ripple creation for performance
+        if (now - lastRippleTime < 90) {
+            return;
+        }
+
+        lastRippleTime = now;
+
+        const ripple =
+            document.createElement("span");
+
+        ripple.classList.add("cursor-ripple");
+
+        ripple.style.left =
+            `${event.clientX}px`;
+
+        ripple.style.top =
+            `${event.clientY}px`;
+
+        rippleContainer.appendChild(ripple);
+
+        ripple.addEventListener(
+            "animationend",
+            () => ripple.remove()
+        );
+
+    });
+
+
+    /* =========================
+       COPY CONTACT DETAILS
+    ========================= */
+
+    function copyToClipboard(text, element) {
+
+        navigator.clipboard.writeText(text);
+
+        const originalText =
+            element.innerHTML;
+
+        element.innerHTML =
+            "✓ &nbsp; Copied to clipboard";
+
+        setTimeout(() => {
+
+            element.innerHTML =
+                originalText;
+
+        }, 1500);
+
+    }
+
+</script>
+```
+
+</body>
+</html>
